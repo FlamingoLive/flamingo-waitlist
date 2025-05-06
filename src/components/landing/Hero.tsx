@@ -76,7 +76,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
         src={OvalBase}
         alt="ovalbase"
-        className="absolute top-0 left-0 2xl:top-[-1rem] 2xl:left-[-6rem] w-[32.125] h-[32.125rem] 2xl:w-[52.125] 2xl:h-[52.125rem] pointer-events-none select-none"
+        className="absolute top-0 left-0 2xl:top-[-1rem] 2xl:left-[-6rem] w-[32.125rem] h-[32.125rem] xl:w-[40.125rem] xl:h-[40.125rem] pointer-events-none select-none"
         style={{ zIndex: 0 }}
       />
 
