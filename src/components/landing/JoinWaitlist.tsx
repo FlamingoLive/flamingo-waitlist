@@ -76,8 +76,8 @@ const JoinWaitlist = () => {
               <span className="text-[#19311E]">FAST AS YOU DO</span>
             </h1>
             <p className="text-lg lg:text-[1.36875rem] text-center text-[#19311E] leading-[2rem] font-medium font-inter">
-              Live, interactive, and instant — Flamingo is redefining how you
-              shop.
+              Live, interactive and instant — Flamingo is redefining how you
+              shop.{" "}
               <br className="hidden lg:block" />
               Be the first to dive in — join the waitlist now
             </p>

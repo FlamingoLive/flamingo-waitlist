@@ -54,7 +54,7 @@ const About = () => {
               At Flamingo, we bring shopping to life, literally. We're a vibrant
               live-stream marketplace where real moments meet real purchases.
               Our mission is simple: connect shoppers with the brands and
-              products they love through fun, interactive, and authentic live
+              products they love through fun, interactive and authentic live
               experiences.
             </p>
           </motion.div>
