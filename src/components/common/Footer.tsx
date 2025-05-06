@@ -7,6 +7,8 @@ import {
 } from "@/assets/images";
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-text-dark flex flex-col font-montserrat text-[0.773125rem] font-light">
       <div className="w-full mx-auto flex py-10 px-5 sm:px-10 2xl:px-[6.25rem]">
@@ -61,8 +63,8 @@ const Footer: React.FC = () => {
         </div>
       </div>
       {/* Bottom Bar */}
-      <p className="w-full border-t border-[#A9D1A1] text-white text-center py-[0.625rem] px-5 sm:px-10 2xl:px-[6.25rem] text-sm tracking-[4.64px] font-light">
-        FLAMINGOLIVE.NG ©2025 ALL RIGHTS RESERVED
+      <p className="w-full border-t border-[#A9D1A1] text-white text-center py-[0.625rem] px-5 sm:px-10 2xl:px-[6.25rem] text-[0.625rem] tracking-[4.64px] font-light">
+        FLAMINGOLIVE.NG ©{currentYear} ALL RIGHTS RESERVED
       </p>
     </footer>
   );
