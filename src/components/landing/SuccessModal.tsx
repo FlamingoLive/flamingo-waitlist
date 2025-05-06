@@ -24,7 +24,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
         style={{
           background: `linear-gradient(to bottom, rgba(25, 49, 30, 1) 28%, rgba(28, 96, 42, 1) 100%)`,
         }}
-        className="flex flex-col gap-[1.075rem] rounded-[38.69px] px-7 xl:px-[2.125rem] py-7 xl:py-13 max-w-[42.1875rem] w-[90%] text-center relative overflow-hidden"
+        className="flex flex-col gap-[1.075rem] rounded-[38.69px] px-7 xl:px-[2.125rem] py-7 xl:py-13 max-w-[42.1875rem] w-[80%] text-center relative overflow-hidden"
       >
         {/* OvalBase overlay */}
         <motion.img
@@ -86,15 +86,15 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
 
         <div className="relative z-10 flex flex-col gap-[1.075rem] justify-center items-center">
           {/* Info and Socials */}
-          <div className="flex flex-wrap justify-between gap-2 xl:gap-[1.075rem] max-w-[33.50875rem] w-full mx-auto">
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between gap-2 xl:gap-[1.075rem] max-w-[33.50875rem] w-full mx-auto">
             <div className="flex items-center justify-start gap-2 text-white">
               <FaRocketchat className="text-primary-2" />
               <p className="text-white text-xs">
                 Be the first to know when we go live!
               </p>
             </div>
-            <div className="h-6 w-[0.43px] bg-primary-2" />
-            <div className="flex items-center justify-start gap-2">
+            <div className="h-6 w-[0.43px] bg-primary-2 hidden md:block" />
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2">
               <p className="text-white text-xs">
                 Follow our social media accounts
               </p>
