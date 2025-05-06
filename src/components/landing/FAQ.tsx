@@ -23,7 +23,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "When can I schedule a live stream?",
-    answer: "Once you complete the tutorial and get your seller access turned on, you can schedule a live stream & create listingsat any time.",
+    answer: "Once you complete the tutorial and get your seller access turned on, you can schedule a live stream & create listings at any time.",
   },
   {
     question: "How and when do I get paid?",
