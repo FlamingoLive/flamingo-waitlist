@@ -3,7 +3,14 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import Footer from "./components/common/Footer";
 import { Toaster } from "react-hot-toast";
 import Landing from "./pages/Landing";
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
+// Extend the Window interface to include gtag
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void; // Adjust the type as necessary
+  }
+}
 
 const TrackPageView = () => {
   const location = useLocation();

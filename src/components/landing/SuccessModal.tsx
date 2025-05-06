@@ -100,7 +100,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
               </p>
               <span className="flex gap-2">
                 <a
-                  href="https://www.facebook.com/flamingolive.ng"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -118,7 +118,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://x.com/flamingolive_ng"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X"
