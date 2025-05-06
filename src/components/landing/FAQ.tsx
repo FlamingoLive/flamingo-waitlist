@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { iMockup, TitikTitikBlack } from "@/assets/images";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
@@ -6,7 +6,12 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import Button from "../common/Button";
 import { scrollToSection } from "@/utils/scrollUtils";
 
-const faqs = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
   {
     question: "How do I unlock my seller access?",
     answer:
@@ -40,7 +45,63 @@ const faqs = [
     question: "What can I sell?",
     answer: "You can sell almost everything on Flamingo!.",
   },
-];
+]
+const MemoizedFAQItem = memo(({idx, isOpen, faq, onClick}:{idx: number, isOpen: boolean, faq: FAQItem, onClick: () => void}) => {
+  return (
+    <motion.div
+    key={idx}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{ type: "spring", stiffness: 300, damping: 30, delay: idx * 0.1 }}
+    layout
+    className={`rounded-[6.02px] border-[1.5px] border-[#152329] pl-[1.880625rem] ${
+      isOpen ? "pb-6" : ""
+    }`}
+  >
+    <div
+      className="flex w-full items-stretch text-left min-h-[3.760625rem] gap-[1.880625rem] focus:outline-none cursor-pointer"
+      onClick={onClick}
+      aria-expanded={isOpen}
+    >
+      <span
+        className={`flex items-center font-bold text-[1.128125rem] rounded-md text-text-dark ${
+          idx === 0 ? "pr-1" : ""
+        }`}
+      >
+        {String(idx + 1).padStart(2, "0")}
+      </span>
+      {!isOpen && (
+        <button
+          className={`max-w-[4.0625rem] w-full cursor-pointer flex items-center justify-center text-2xl bg-[#152329] hover:bg-[#152329]/90 text-primary-2 font-bold transition-colors duration-200`}
+        >
+          <FaPlus />
+        </button>
+      )}
+      <span className="flex-1 flex items-center text-text-dark text-lg xl:text-[1.128125rem] font-medium pr-2">
+        {faq.question}
+      </span>
+      {isOpen && (
+        <button
+          className={`max-w-[4.043125rem] w-full cursor-pointer flex items-center justify-center rounded-tr-md rounded-br-md text-2xl font-bold transition-colors duration-200 bg-[#d4ff00] hover:bg-[#d4ff00]/85 text-[#16351f]`}
+        >
+          <FaMinus />
+        </button>
+      )}
+    </div>
+    <AnimatePresence initial={false}>
+      {isOpen && (
+        <div
+          className="overflow-hidden pl-[3.15rem] pt-[0.94rem] pr-[0.47rem]"
+        >
+          <p className="text-text-dark text-base font-inter font-light">
+            {faq.answer}
+          </p>
+        </div>
+      )}
+    </AnimatePresence>
+  </motion.div>
+   )})
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -71,65 +132,19 @@ const FAQ = () => {
             ASKED<span className="text-primary-2"> QUESTIONS</span>
           </h2>
           <div className="lg:mt-8 space-y-4 z-10">
-            {faqs.map((faq, idx) => {
-              const isOpen = openIndex === idx;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30, delay: idx * 0.1 }}
-                  layout
-                  className={`rounded-[6.02px] border-[1.5px] border-[#152329] pl-[1.880625rem] ${
-                    isOpen ? "pb-6" : ""
-                  }`}
-                >
-                  <div
-                    className="flex w-full items-stretch text-left min-h-[3.760625rem] gap-[1.880625rem] focus:outline-none cursor-pointer"
-                    onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                    aria-expanded={isOpen}
-                  >
-                    <span
-                      className={`flex items-center font-bold text-[1.128125rem] rounded-md text-text-dark ${
-                        idx === 0 ? "pr-1" : ""
-                      }`}
-                    >
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    {!isOpen && (
-                      <button
-                        className={`max-w-[4.0625rem] w-full cursor-pointer flex items-center justify-center text-2xl bg-[#152329] hover:bg-[#152329]/90 text-primary-2 font-bold transition-colors duration-200`}
-                      >
-                        <FaPlus />
-                      </button>
-                    )}
-                    <span className="flex-1 flex items-center text-text-dark text-lg xl:text-[1.128125rem] font-medium pr-2">
-                      {faq.question}
-                    </span>
-                    {isOpen && (
-                      <button
-                        className={`max-w-[4.043125rem] w-full cursor-pointer flex items-center justify-center rounded-tr-md rounded-br-md text-2xl font-bold transition-colors duration-200 bg-[#d4ff00] hover:bg-[#d4ff00]/85 text-[#16351f]`}
-                      >
-                        <FaMinus />
-                      </button>
-                    )}
-                  </div>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <div
-                        className="overflow-hidden pl-[3.15rem] pt-[0.94rem] pr-[0.47rem]"
-                      >
-                        <p className="text-text-dark text-base font-inter font-light">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-          </div>
+      {faqs.map((faq, idx) => {
+        const isOpen = openIndex === idx;
+        return (
+          <MemoizedFAQItem
+            key={idx}
+            idx={idx}
+            isOpen={isOpen}
+            faq={faq}
+            onClick={() => setOpenIndex(isOpen ? -1 : idx)}
+          />
+        );
+      })}
+</div>
         </motion.div>
         {/* FAQ Image */}
         <div className="hidden lg:block absolute right-0 top-10">

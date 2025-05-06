@@ -138,7 +138,7 @@ const HowItWorks = () => {
 
         {/* Buyer Screens */}
         <motion.div
-          className="relative flex flex-col w-full gap-10 p-10"
+          className="relative hidden md:flex flex-col w-full gap-10 p-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -215,7 +215,7 @@ const HowItWorks = () => {
 
         {/* Sellers Screens */}
         <motion.div
-          className="relative flex flex-col w-full gap-10 p-10"
+          className="relative hidden md:flex flex-col w-full gap-10 p-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -303,6 +303,166 @@ const HowItWorks = () => {
             ))}
           </div>
         </motion.div>
+
+                {/* Buyer Screens */}
+                <div
+          className="relative md:hidden flex flex-col w-full gap-10 p-10"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(2, 98, 22, 0.2) 3%, rgba(25, 49, 30, 0.2) 22%, rgba(25, 49, 30, 0.6) 80%, rgba(255, 255, 255, 0.02) 100%)",
+          }}
+        >
+          <h2 className="inline-block bg-text-dark w-full text-primary-2 font-bold p-[0.625rem] uppercase text-xs md:text-base">
+            For Buyers
+          </h2>
+
+          {/* Spot Color */}
+          <div className="absolute top-60 left-0 max-w-md w-full h-60 bg-[#CCFF00]/30 rounded-full blur-[100px] z-0" />
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 xl:gap-10 w-full relative z-10">
+            <img
+              src={TitikTitik}
+              alt="Decorative dots left"
+              className="absolute top-40 -left-24 w-24 h-24 lg:w-32 lg:h-32 z-[-1]"
+              aria-hidden="true"
+            />
+
+            {buyerFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="col-span-2 md:col-span-1 flex-1"
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={cardVariants}
+                transition={{ delay: 0.1 }}
+              >
+                <motion.div
+                  className={`${feature.bgColor} p-[0.625rem] h-full flex ${
+                    feature.imagePosition === "top"
+                      ? "flex-col"
+                      : "flex-col-reverse"
+                  } justify-between gap-[0.625rem] transition-transform duration-300`}
+                >
+                  <div className="flex flex-col  p-[0.625rem] gap-[0.625rem]">
+                    <h3
+                      className={`text-sm font-semibold uppercase  ${
+                        index === 1 ? "text-white" : "text-[#4A4A4A]"
+                      }`}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={`text-sm font-semibold leading-[120%] tracking-[0.5px] w-[90%] ${
+                        index === 1 ? "text-white" : "text-[#19311E]"
+                      }`}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div className="relative h-[18.25rem] w-full overflow-hidden">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className={`absolute ${
+                        feature.imagePosition === "top"
+                          ? "top-0 mt-[0.625rem]"
+                          : "bottom-10 mb-[0.625rem]"
+                      } inset-x-0 w-full max-w-[16rem] mx-auto`}
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Sellers Screens */}
+        <div
+          className="relative md:hidden flex flex-col w-full gap-10 p-10"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(2, 98, 22, 0.2) 3%, rgba(25, 49, 30, 0.2) 22%, rgba(25, 49, 30, 0.6) 80%, rgba(255, 255, 255, 0.02) 100%)",
+          }}
+        >
+          <h2 className="inline-block bg-text-dark w-full text-primary-2 font-bold p-[0.625rem] uppercase text-xs md:text-base relative z-10">
+            For Sellers
+          </h2>
+
+          <img
+            src={TitikTitik}
+            alt="Decorative dots top right"
+            className="absolute top-0 -right-14 w-24 h-24 lg:w-32 lg:h-32 z-0 opacity-60"
+            aria-hidden="true"
+          />
+
+          <img
+            src={TitikTitik}
+            alt="Decorative dots left middle"
+            className="absolute -left-16 bottom-72 w-24 h-24 lg:w-32 lg:h-32 z-0 opacity-60"
+            aria-hidden="true"
+          />
+
+          <img
+            src={TitikTitik}
+            alt="Decorative dots bottom right"
+            className="absolute -right-5 -bottom-8 w-24 h-24 lg:w-32 lg:h-32 z-0 opacity-60"
+            aria-hidden="true"
+          />
+
+          {/* Spot Color */}
+          <div className="absolute top-1/2 -translate-y-1/2 -right-20 max-w-md w-full h-60 bg-[#CCFF00]/30 rounded-full blur-[100px] z-0" />
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 xl:gap-10 w-full z-10">
+            {sellerFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="col-span-2 md:col-span-1 flex-1"
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={cardVariants}
+                transition={{ delay: 0.1 }}
+              >
+                <motion.div
+                  className={`${feature.bgColor} p-[0.625rem] h-full flex ${
+                    feature.imagePosition === "top"
+                      ? "flex-col"
+                      : "flex-col-reverse"
+                  } justify-between gap-[0.625rem] transition-transform duration-300`}
+                >
+                  <div className="flex flex-col  p-[0.625rem] gap-[0.625rem]">
+                    <h3
+                      className={`text-sm font-semibold uppercase  ${
+                        index === 2 ? "text-white" : "text-[#4A4A4A]"
+                      }`}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={`text-sm font-semibold leading-[120%] tracking-[0.5px] w-[90%] ${
+                        index === 2 ? "text-white" : "text-[#19311E]"
+                      }`}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div className="relative h-[18.25rem] w-full overflow-hidden">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className={`absolute ${
+                        feature.imagePosition === "top"
+                          ? "top-0 mt-[0.625rem]"
+                          : "bottom-10 mb-[0.625rem]"
+                      } inset-x-0 w-full max-w-[16rem] mx-auto`}
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Call to Action */}
         <motion.div

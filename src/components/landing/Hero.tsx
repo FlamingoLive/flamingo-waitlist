@@ -236,21 +236,21 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.2 }}
-          className="w-fit flex flex-wrap justify-center gap-2 sm:gap-4 2xl:gap-[2.75rem] mx-auto px-5 sm:px-10 2xl:px-20 text-text-dark"
+          className="w-fit flex justify-center gap-2 sm:gap-4 2xl:gap-[2.75rem] mx-auto px-2 sm:px-10 2xl:px-20 text-text-dark"
         >
-          <div className="flex flex-col gap-2 items-center px-4">
-            <div className="text-xl 2xl:text-2xl font-medium">5000+</div>
-            <div className="text-sm">Shoppers waiting</div>
+          <div className="flex flex-col gap-1 2xl:gap-2 items-center justify-center px-2 text-center md:px-4">
+            <div className="text-lg md:text-xl 2xl:text-2xl font-medium">5000+</div>
+            <div className="text-xs md:text-sm">Shoppers waiting</div>
           </div>
           <div className="border-l border-[#0C2319]" />
-          <div className="flex flex-col gap-1 2xl:gap-2 items-center px-4">
-            <div className="text-xl 2xl:text-2xl font-medium">500+</div>
-            <div className="text-sm">Sellers</div>
+          <div className="flex flex-col gap-1 2xl:gap-2 items-center text-center px-2 md:px-4">
+            <div className="text-lg md:text-xl 2xl:text-2xl font-medium">500+</div>
+            <div className="text-xs md:text-sm">Sellers</div>
           </div>
           <div className="border-l border-[#0C2319]" />
-          <div className="flex flex-col gap-1 2xl:gap-2 items-center px-4">
-            <div className="text-xl 2xl:text-2xl font-medium">3x Faster</div>
-            <div className="text-sm">Shopping Experience</div>
+          <div className="flex flex-col gap-1 2xl:gap-2 items-center text-center px-2 md:px-4">
+            <div className="text-lg md:text-xl 2xl:text-2xl font-medium">3x Faster</div>
+            <div className="text-xs md:text-sm">Shopping Experience</div>
           </div>
         </motion.div>
 
