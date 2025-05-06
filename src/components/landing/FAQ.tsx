@@ -48,13 +48,8 @@ const faqs: FAQItem[] = [
 ]
 const MemoizedFAQItem = memo(({idx, isOpen, faq, onClick}:{idx: number, isOpen: boolean, faq: FAQItem, onClick: () => void}) => {
   return (
-    <motion.div
+    <div
     key={idx}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: 20 }}
-    transition={{ duration: 0.7 }}
-    layout
     className={`rounded-[6.02px] border-[1.5px] border-[#152329] pl-[1.880625rem] ${
       isOpen ? "pb-6" : ""
     }`}
@@ -100,7 +95,7 @@ const MemoizedFAQItem = memo(({idx, isOpen, faq, onClick}:{idx: number, isOpen: 
         </div>
       )}
     </AnimatePresence>
-  </motion.div>
+  </div>
    )})
 
 const FAQ = () => {
