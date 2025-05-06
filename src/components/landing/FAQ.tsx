@@ -17,34 +17,34 @@ const faqs: FAQItem[] = [
     answer:
       "Getting your seller access turned on is easy. Just answer a few questions, provide your return address and complete our quick tutorial.",
   },
-  {
-    question: "Can I have a second seller account?",
-    answer: "We are only allowing one seller account per person. If you need to create a second account, please contact us at support@flamingolive.ng",
-  },
-  {
-    question: "When can I schedule a live stream?",
-    answer: "Once you complete the tutorial and get your seller access turned on, you can schedule a live stream & create listingsat any time.",
-  },
-  {
-    question: "How and when do i get paid?",
-    answer: "You'll get paid 48-72 hours after your buyer has received their order.",
-  },
-  {
-    question: "Do I need to show my face on camera?",
-    answer: "No. Showing your face is not required. However, we recommend it to help build trust with your audience.",
-  },
-  {
-    question: "Am I allowed to sell if I'm under 18?",
-    answer: "If you are 13-17 years old, you can sell with an adult guardian's permission.",
-  },
-  {
-    question: "What are the fees?",
-    answer: "Flamingo takes 5-8% per transaction, plus credit card fees.",
-  },
-  {
-    question: "What can I sell?",
-    answer: "You can sell almost everything on Flamingo!.",
-  },
+  // {
+  //   question: "Can I have a second seller account?",
+  //   answer: "We are only allowing one seller account per person. If you need to create a second account, please contact us at support@flamingolive.ng",
+  // },
+  // {
+  //   question: "When can I schedule a live stream?",
+  //   answer: "Once you complete the tutorial and get your seller access turned on, you can schedule a live stream & create listingsat any time.",
+  // },
+  // {
+  //   question: "How and when do I get paid?",
+  //   answer: "You'll get paid 48-72 hours after your buyer has received their order.",
+  // },
+  // {
+  //   question: "Do I need to show my face on camera?",
+  //   answer: "No. Showing your face is not required. However, we recommend it to help build trust with your audience.",
+  // },
+  // {
+  //   question: "Am I allowed to sell if I'm under 18?",
+  //   answer: "If you are 13-17 years old, you can sell with an adult guardian's permission.",
+  // },
+  // {
+  //   question: "What are the fees?",
+  //   answer: "Flamingo takes 5-8% per transaction, plus credit card fees.",
+  // },
+  // {
+  //   question: "What can I sell?",
+  //   answer: "You can sell almost everything on Flamingo!.",
+  // },
 ]
 const MemoizedFAQItem = memo(({idx, isOpen, faq, onClick}:{idx: number, isOpen: boolean, faq: FAQItem, onClick: () => void}) => {
   return (
