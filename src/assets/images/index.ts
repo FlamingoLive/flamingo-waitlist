@@ -10,6 +10,7 @@ import MockUp4 from "./iMockup_iPhone4.png";
 import MockUp5 from "./iMockup_iPhone5.png";
 import MockUp6 from "./iMockup_iPhone6.png";
 import MockUp7 from "./iMockup_iPhone7.png";
+import MockUp8 from "./iMockup_iPhone8.png";
 import HandIphoneX1 from "./hand_iphone_x1.png";
 import HandIphoneX2 from "./hand_iphone_x2.png";
 import HandIphoneX3 from "./hand_iphone_x3.png";
@@ -44,6 +45,7 @@ export {
   MockUp5,
   MockUp6,
   MockUp7,
+  MockUp8,
   HandIphoneX1,
   HandIphoneX2,
   HandIphoneX3,

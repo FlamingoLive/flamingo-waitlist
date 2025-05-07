@@ -9,6 +9,7 @@ import {
   MockUp5,
   MockUp6,
   MockUp7,
+  MockUp8,
   TitikTitik,
 } from "@/assets/images";
 import { scrollToSection } from "@/utils/scrollUtils";
@@ -92,7 +93,7 @@ const sellerFeatures = [
     title: "Plan & Promote Live Shows",
     description:
       "Pick a date and time for your stream, add a thumbnail and title, then share the link across social channels to build the buzz.",
-    image: MockUp3,
+    image: MockUp8,
     bgColor: "bg-[#EFA519]/60",
     imagePosition: "bottom",
   },
