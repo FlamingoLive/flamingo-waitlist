@@ -474,7 +474,7 @@ const HowItWorks = () => {
         >
           <div className="flex flex-col gap-[0.625rem]">
             <h3 className="text-[1.35rem] font-bold text-center">
-              Be the First to Stream, Shop and Connect — Join Our Waitlist Today.
+              Be the First to Stream, Shop and Connect — Join Our Waitlist Today
             </h3>
             <p className="text-sm text-center font-medium">
               Get early access to exclusive live shopping experiences. Secure
