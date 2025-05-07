@@ -48,7 +48,7 @@ const buyerFeatures = [
   {
     title: "Follow Sellers & Revisit Shops",
     description:
-      "Follow sellers to track past streams, product listings, and ratings. Never miss future drops or deals.",
+      "Follow sellers to track streams, product listings, and ratings. Never miss future drops or deals.",
     image: MockUp3,
     bgColor: "bg-[#EFA519]/60",
     imagePosition: "top",
