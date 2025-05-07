@@ -1,4 +1,4 @@
-import { FlamingoWhiteLogo} from "@/assets/images";
+import { FlamingoWhiteLogo} from '../../assets/images';
 import { scrollToSection } from "@/utils/scrollUtils";
 import Button from "./Button";
 

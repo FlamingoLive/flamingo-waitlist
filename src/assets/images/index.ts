@@ -1,4 +1,5 @@
-import FlamingoWhiteLogo from "./flamingo_white_logo.svg";
+// import FlamingoWhiteLogo from "./flamingo_white_logo.svg";
+import FlamingoWhiteLogo from "./flamingo_white_logo.png";
 import FlamingoBlackLogo from "./flamingo_black_logo.svg";
 import FlamingoLogo from "./flamingo_logo.svg";
 import iMockup from "./iMockup.svg";
