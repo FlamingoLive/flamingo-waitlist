@@ -148,32 +148,39 @@ const FAQ = () => {
     >
       <div className="flex-1 relative max-w-[77.5rem] w-full mx-auto flex py-5 items-center gap-[6.25rem] xl:gap-[12.5rem]">
         {/* FAQ Content */}
-        <motion.div
-          className="relative flex-1 w-full lg:max-w-[30rem] xl:max-w-[38.153125rem] flex flex-col gap-[2.820625rem]"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.1 }}
-        >
-          <h2 className="text-3xl md:text-[2.444375rem] font-bricolage tracking-[0.11em] font-bold text-text-dark">
+        <div className="relative flex-1 w-full lg:max-w-[30rem] xl:max-w-[38.153125rem] flex flex-col gap-[2.820625rem]">
+          <motion.h2
+            className="text-3xl md:text-[2.444375rem] font-bricolage tracking-[0.11em] font-bold text-text-dark"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             FREQUENTLY <br className="hidden lg:block" />
             ASKED<span className="text-primary-2"> QUESTIONS</span>
-          </h2>
+          </motion.h2>
           <div className="lg:mt-8 space-y-4 z-10">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
-                <MemoizedFAQItem
+                <motion.div
                   key={idx}
-                  idx={idx}
-                  isOpen={isOpen}
-                  faq={faq}
-                  onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                />
+                  initial={{ opacity: 0, x: -32 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: idx * 0.06, ease: "easeOut" }}
+                >
+                  <MemoizedFAQItem
+                    idx={idx}
+                    isOpen={isOpen}
+                    faq={faq}
+                    onClick={() => setOpenIndex(isOpen ? -1 : idx)}
+                  />
+                </motion.div>
               );
             })}
           </div>
-        </motion.div>
+        </div>
         {/* FAQ Image */}
         <div className="hidden lg:block absolute right-0 top-10">
           {/* Spot color */}
