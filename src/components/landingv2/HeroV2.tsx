@@ -76,7 +76,7 @@ const HeroV2 = () => {
       {/* Navbar */}
       <nav className="relative z-10 border-b border-[#a9d1a1] px-5 sm:px-10 2xl:px-20 py-5 2xl:py-10">
         <div className="max-w-[80rem] w-full mx-auto flex items-center justify-between py-3">
-          <a href="/v2" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src={FlamingoWhiteLogo}
               alt="Flamingo"
