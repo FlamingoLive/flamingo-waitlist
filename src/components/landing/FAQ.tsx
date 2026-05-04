@@ -121,7 +121,7 @@ const FAQ = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.1 }}
         >
-          <h2 className="text-3xl md:text-[2.444375rem] font-plusJakarta font-bold text-text-dark">
+          <h2 className="text-3xl md:text-[2.444375rem] font-bricolage font-bold text-text-dark">
             FREQUENTLY{" "}
             <br className="hidden lg:block" />
             ASKED<span className="text-primary-2"> QUESTIONS</span>
