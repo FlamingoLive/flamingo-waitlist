@@ -10,7 +10,7 @@ const FooterV2: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#071404] flex flex-col font-montserrat text-[0.773125rem] font-light">
+    <footer className="bg-[#010500] flex flex-col font-montserrat text-[0.773125rem] font-light">
       <div className="w-full mx-auto flex py-10 px-5 sm:px-10 2xl:px-[6.25rem]">
         <div className="max-w-[77.5rem] flex flex-wrap justify-between items-start w-full mx-auto py-[0.875rem]">
           {/* Left: Logo */}
@@ -50,7 +50,7 @@ const FooterV2: React.FC = () => {
           {/* Right: Social icons */}
           <div className="flex items-center gap-4">
             <a
-              href="https://www.instagram.com/flamingoliveng"
+              href="https://www.instagram.com/flamingoliveapp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
@@ -66,7 +66,7 @@ const FooterV2: React.FC = () => {
               <img src={FacebookIcon} alt="Facebook" className="h-6 w-6" />
             </a>
             <a
-              href="#"
+              href="https://x.com/flamingoliveapp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"

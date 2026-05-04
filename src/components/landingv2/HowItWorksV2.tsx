@@ -120,12 +120,12 @@ const HowItWorksV2 = () => {
       {/* Two-column layout */}
       <div className="flex flex-col lg:flex-row gap-[140px] items-center w-full max-w-[80rem]">
         {/* Left: step image */}
-        <div className="shrink-0 w-full lg:w-[420px]">
+        <div className="shrink-0 w-full lg:w-[420px] relative aspect-[3/5] lg:aspect-auto lg:h-[560px]">
           <motion.img
             key={activeStep}
             src={steps[activeStep].image}
             alt={steps[activeStep].title}
-            className="w-full h-auto object-contain rounded-[28px]"
+            className="absolute inset-0 w-full h-full object-contain rounded-[28px]"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}

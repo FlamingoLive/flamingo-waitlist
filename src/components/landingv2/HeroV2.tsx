@@ -57,7 +57,7 @@ const HeroV2 = () => {
   return (
     <section
       id="hero"
-      className="h-[calc(100vh-220px)] flex flex-col relative bg-[#040C02] overflow-hidden"
+      className="min-h-[calc(100vh-220px)] flex flex-col relative bg-[#040C02] overflow-hidden pb-8"
     >
       {/* OvalBase overlay */}
       <motion.img
