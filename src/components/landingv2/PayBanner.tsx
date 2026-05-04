@@ -13,7 +13,7 @@ import {
 const coins = [
   { src: DollarCoin, alt: "Dollar", className: "absolute left-[2%] top-1/2 -translate-y-1/2 w-[140px] lg:w-[180px]" },
   { src: RCoin, alt: "R Coin", className: "absolute left-[16%] top-[8%] w-[90px] lg:w-[115px]" },
-  { src: NairaCoin, alt: "Naira", className: "absolute right-[30%] top-[4%] w-[95px] lg:w-[120px]" },
+  { src: NairaCoin, alt: "Naira", className: "absolute right-[20%] top-[4%] w-[95px] lg:w-[120px]" },
   { src: PoundCoin, alt: "Pound", className: "absolute right-[2%] top-1/2 -translate-y-1/2 w-[140px] lg:w-[180px]" },
   { src: KshCoin, alt: "KSh", className: "absolute right-[15%] bottom-[6%] w-[90px] lg:w-[115px]" },
 ];
