@@ -4,18 +4,26 @@ import { scrollToSection } from "@/utils/scrollUtils";
 import Button from "@/components/common/Button";
 import {
   PaymentModal,
+  SellerGoesLive,
+  BuyersWatchEngage,
+  DeliveryConfirmed,
+  RepNRewards,
   SellerGoesLiveIcon,
   WatchEngageIcon,
   InstantCheckoutIcon,
   DeliveryConfirmedIcon,
   RepRewardsIcon,
 } from "@/assets/imagesv2";
-import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
 
 const STEP_DURATION = 3500;
 
 interface Step {
   icon: string;
+  image: string;
   title: string;
   description: string;
 }
@@ -23,30 +31,35 @@ interface Step {
 const steps: Step[] = [
   {
     icon: SellerGoesLiveIcon,
+    image: SellerGoesLive,
     title: "Seller Goes Live",
     description:
       "Seller launches a shoppable stream from the Flamingo app. Products overlay in real-time.",
   },
   {
     icon: WatchEngageIcon,
+    image: BuyersWatchEngage,
     title: "Buyers Watch & Engage",
     description:
       "Viewers react, ask questions, see social proof. Building trust before they tap buy.",
   },
   {
     icon: InstantCheckoutIcon,
+    image: PaymentModal,
     title: "Instant Checkout",
     description:
       "Buyer taps 'Buy Now'. Payment via credit card, bank transfer or USDC. Escrowed instantly. No card friction.",
   },
   {
     icon: DeliveryConfirmedIcon,
+    image: DeliveryConfirmed,
     title: "Delivery Confirmed",
     description:
       "Buyer confirms receipt. Escrow releases. Seller receives local currency via off-ramp.",
   },
   {
     icon: RepRewardsIcon,
+    image: RepNRewards,
     title: "Rep & Rewards",
     description:
       "Build your reputation and earn rewards with every completed transaction.",
@@ -85,9 +98,8 @@ const HowItWorksV2 = () => {
   return (
     <section
       id="howitworks"
-      className="relative bg-[#071404] w-full py-[60px] px-5 sm:px-10 2xl:px-[87px] flex flex-col gap-[60px] items-center overflow-hidden"
+      className="relative bg-[#010500] w-full py-[60px] px-5 sm:px-10 2xl:px-[87px] flex flex-col gap-[60px] items-center overflow-hidden"
     >
-
       {/* Header */}
       <motion.div
         className="flex flex-col gap-[10px] items-start w-full max-w-[80rem]"
@@ -107,20 +119,18 @@ const HowItWorksV2 = () => {
 
       {/* Two-column layout */}
       <div className="flex flex-col lg:flex-row gap-[140px] items-center w-full max-w-[80rem]">
-        {/* Left: payment modal image */}
-        <motion.div
-          className="shrink-0 w-full lg:w-[420px]"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-        >
-          <img
-            src={PaymentModal}
-            alt="Flamingo payment flow"
+        {/* Left: step image */}
+        <div className="shrink-0 w-full lg:w-[420px]">
+          <motion.img
+            key={activeStep}
+            src={steps[activeStep].image}
+            alt={steps[activeStep].title}
             className="w-full h-auto object-contain rounded-[28px]"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
           />
-        </motion.div>
+        </div>
 
         {/* Right: animated timeline */}
         <div className="flex gap-4 items-start flex-1 min-w-0">
@@ -137,7 +147,10 @@ const HowItWorksV2 = () => {
                 {i === activeStep && (
                   <div
                     className="w-full bg-[rgba(204,255,0,0.74)] rounded-[24px]"
-                    style={{ height: `${fillPct}%`, transition: "height 16ms linear" }}
+                    style={{
+                      height: `${fillPct}%`,
+                      transition: "height 16ms linear",
+                    }}
                   />
                 )}
               </div>

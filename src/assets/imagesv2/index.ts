@@ -1,5 +1,7 @@
 import BuyerProtectionIcons from "./buyer-protection-icons.png";
+import BuyersWatchEngage from "./buyers-watch-engage.png";
 import CircleLogo from "./circle-logo.png";
+import DeliveryConfirmed from "./delivery-confirmed.png";
 import DeliveryConfirmedIcon from "./delivery-confirmed-icon.png";
 import DollarCoin from "./dollar-coin.png";
 import HeroMockup from "./hero-mockup.png";
@@ -13,7 +15,9 @@ import PaymentModal from "./payment-modal.png";
 import PoundCoin from "./pound-coin.png";
 import PrivyLogo from "./privy-logo.png";
 import RCoin from "./R-coin.png";
+import RepNRewards from "./repnrewards.png";
 import RepRewardsIcon from "./rep-rewards-icon.png";
+import SellerGoesLive from "./seller-goes-live.png";
 import SellerGoesLiveIcon from "./seller-goes-live-icon.png";
 import SolLogo from "./SOL-logo.png";
 import Underline from "./underline.png";
@@ -22,7 +26,9 @@ import WorldIcon from "./world-icon.png";
 
 export {
   BuyerProtectionIcons,
+  BuyersWatchEngage,
   CircleLogo,
+  DeliveryConfirmed,
   DeliveryConfirmedIcon,
   DollarCoin,
   HeroMockup,
@@ -36,7 +42,9 @@ export {
   PoundCoin,
   PrivyLogo,
   RCoin,
+  RepNRewards,
   RepRewardsIcon,
+  SellerGoesLive,
   SellerGoesLiveIcon,
   SolLogo,
   Underline,

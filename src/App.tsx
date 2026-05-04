@@ -5,9 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import ScrollToTop from "./components/common/ScrollToTop";
-import Footer from "./components/common/Footer";
 import { Toaster } from "react-hot-toast";
-import Landing from "./pages/Landing";
 import LandingV2 from "./pages/LandingV2";
 import { useEffect } from "react";
 
