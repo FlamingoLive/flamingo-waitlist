@@ -11,16 +11,16 @@ import {
 } from "@/assets/imagesv2";
 
 const coins = [
-  { src: DollarCoin, alt: "Dollar", className: "absolute left-[2%] top-1/2 -translate-y-1/2 w-[140px] lg:w-[180px]" },
-  { src: RCoin, alt: "R Coin", className: "absolute left-[16%] top-[8%] w-[90px] lg:w-[115px]" },
-  { src: NairaCoin, alt: "Naira", className: "absolute right-[20%] top-[4%] w-[95px] lg:w-[120px]" },
-  { src: PoundCoin, alt: "Pound", className: "absolute right-[2%] top-1/2 -translate-y-1/2 w-[140px] lg:w-[180px]" },
-  { src: KshCoin, alt: "KSh", className: "absolute right-[15%] bottom-[6%] w-[90px] lg:w-[115px]" },
+  { src: DollarCoin, alt: "Dollar", className: "absolute left-[2%] top-1/2 -translate-y-1/2 w-[110px] lg:w-[145px]" },
+  { src: RCoin, alt: "R Coin", className: "absolute left-[16%] top-[8%] w-[70px] lg:w-[90px]" },
+  { src: NairaCoin, alt: "Naira", className: "absolute right-[20%] top-[4%] w-[75px] lg:w-[95px]" },
+  { src: PoundCoin, alt: "Pound", className: "absolute right-[2%] top-1/2 -translate-y-1/2 w-[110px] lg:w-[145px]" },
+  { src: KshCoin, alt: "KSh", className: "absolute right-[15%] bottom-[6%] w-[70px] lg:w-[90px]" },
 ];
 
 const PayBanner = () => {
   return (
-    <section className="relative bg-[#040C02] w-full px-5 sm:px-10 2xl:px-20 overflow-hidden flex items-center justify-center min-h-[246px]">
+    <section className="relative bg-[#040C02] w-full px-5 sm:px-10 2xl:px-20 overflow-hidden flex items-center justify-center min-h-[190px]">
       {/* Coins — hidden on mobile */}
       <div className="hidden sm:contents">
         {coins.map((coin) => (
@@ -51,7 +51,7 @@ const PayBanner = () => {
         </span>
 
         {/* Headline */}
-        <h2 className="font-bricolage font-bold text-[36px] sm:text-[48px] text-white leading-none">
+        <h2 className="font-bricolage font-bold text-[28px] sm:text-[38px] text-white leading-none">
           Fast, Cheap, Borderless
         </h2>
 

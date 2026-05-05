@@ -36,9 +36,9 @@ const HeroV2 = () => {
     const updateRadius = () => {
       const width = window.innerWidth;
       if (width >= 1536) {
-        setOrbitRadius(180);
+        setOrbitRadius(210);
       } else if (width >= 1280) {
-        setOrbitRadius(170);
+        setOrbitRadius(185);
       } else if (width >= 1024) {
         setOrbitRadius(160);
       } else {
@@ -185,7 +185,7 @@ const HeroV2 = () => {
               {/* Orbiting Images */}
               <div
                 className="absolute inset-0 flex items-center justify-center"
-                style={{ transform: "translateY(-20%)" }}
+                style={{ transform: "translateY(-10%)" }}
               >
                 {orbitingImages.map((image, index) => {
                   const startAngle =

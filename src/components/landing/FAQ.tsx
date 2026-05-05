@@ -44,7 +44,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the fees?",
-    answer: "Flamingo takes 5-8% per transaction, plus credit card fees.",
+    answer: "Flamingo takes 5% per transaction, plus credit card fees.",
   },
   {
     question: "What can I sell?",
@@ -168,7 +168,11 @@ const FAQ = () => {
                   initial={{ opacity: 0, x: -32 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.4, delay: idx * 0.06, ease: "easeOut" }}
+                  transition={{
+                    duration: 0.4,
+                    delay: idx * 0.06,
+                    ease: "easeOut",
+                  }}
                 >
                   <MemoizedFAQItem
                     idx={idx}
