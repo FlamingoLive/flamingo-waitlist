@@ -74,8 +74,8 @@ const HeroV2 = () => {
       <div className="absolute top-10 left-10 max-w-sm w-full h-30 bg-[#CCFF00]/20 rounded-full blur-[100px] z-0" />
 
       {/* Navbar */}
-      <nav className="relative z-10 border-b border-[#a9d1a1] px-5 sm:px-10 2xl:px-20 py-5 2xl:py-10">
-        <div className="max-w-[80rem] w-full mx-auto flex items-center justify-between py-3">
+      <nav className="relative z-10 border-b border-[#a9d1a1] px-5 sm:px-10 2xl:px-20 py-2 2xl:py-5">
+        <div className="max-w-[80rem] w-full mx-auto flex items-center justify-between py-1">
           <a href="/" className="flex items-center">
             <img
               src={FlamingoWhiteLogo}

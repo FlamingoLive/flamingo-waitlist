@@ -1,10 +1,10 @@
-<svg width="85" height="53" viewBox="0 0 85 53" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_i_1519_17713)">
-<rect width="84.9752" height="53" rx="5.2562" fill="url(#paint0_linear_1519_17713)" fill-opacity="0.05"/>
-<rect x="20.6414" y="11.1694" width="43.6922" height="30.6612" fill="url(#pattern0_1519_17713)"/>
+<rect width="84.9752" height="85" rx="8" fill="url(#paint0_linear_1519_17713)" fill-opacity="0.05"/>
+<rect x="20.6414" y="27.1694" width="43.6922" height="30.6612" fill="url(#pattern0_1519_17713)"/>
 </g>
 <defs>
-<filter id="filter0_i_1519_17713" x="0" y="0" width="84.9752" height="55" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_i_1519_17713" x="0" y="0" width="84.9752" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
