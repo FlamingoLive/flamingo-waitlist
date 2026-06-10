@@ -13,13 +13,11 @@ import NairaCoin from "./naira-coin.png";
 import OffRampIcon from "./off-ramp-icon.png";
 import PaymentModal from "./payment-modal.png";
 import PoundCoin from "./pound-coin.png";
-import PrivyLogo from "./privy-logo.png";
 import RCoin from "./R-coin.png";
 import RepNRewards from "./repnrewards.png";
 import RepRewardsIcon from "./rep-rewards-icon.png";
 import SellerGoesLive from "./seller-goes-live.png";
 import SellerGoesLiveIcon from "./seller-goes-live-icon.png";
-import SolLogo from "./SOL-logo.png";
 import Underline from "./underline.png";
 import WatchEngageIcon from "./watch-engage-icon.png";
 import WorldIcon from "./world-icon.png";
@@ -40,13 +38,11 @@ export {
   OffRampIcon,
   PaymentModal,
   PoundCoin,
-  PrivyLogo,
   RCoin,
   RepNRewards,
   RepRewardsIcon,
   SellerGoesLive,
   SellerGoesLiveIcon,
-  SolLogo,
   Underline,
   WatchEngageIcon,
   WorldIcon,
