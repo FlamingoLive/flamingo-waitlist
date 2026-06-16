@@ -34,7 +34,7 @@ const FooterV2: React.FC = () => {
                 href="mailto:support@flamingolive.ng"
                 className="text-white hover:underline"
               >
-                support@flamingolive.ng
+                support@flamingolive
               </a>
             </div>
             <div className="flex flex-col items-start mb-6 md:mb-0">
@@ -78,7 +78,7 @@ const FooterV2: React.FC = () => {
       </div>
       {/* Bottom bar */}
       <p className="w-full border-t border-[#A9D1A1] text-white text-center py-[0.625rem] px-5 sm:px-10 2xl:px-[6.25rem] text-[0.625rem] tracking-[4.64px] font-light">
-        FLAMINGOLIVE.NG ©{currentYear} ALL RIGHTS RESERVED
+        FLAMINGOLIVE ©{currentYear} ALL RIGHTS RESERVED
       </p>
     </footer>
   );

@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 href="mailto:hello@bienv3nue.com"
                 className="text-white hover:underline"
               >
-                support@flamingolive.ng
+                support@flamingolive
               </a>
             </div>
             {/* Center Right: Privacy/Terms */}
@@ -50,13 +50,28 @@ const Footer: React.FC = () => {
 
           {/* Right: Social Media Icons */}
           <div className="flex items-center gap-4">
-            <a href="https://www.instagram.com/flamingoliveng" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <a
+              href="https://www.instagram.com/flamingoliveng"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <img src={InstagramIcon} alt="Instagram" className="h-6 w-6" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"  className="hover:opacity-80 transition-opacity">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <img src={FacebookIcon} alt="Facebook" className="h-6 w-6" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <img src={XIcon} alt="X (Twitter)" className="h-6 w-6" />
             </a>
           </div>
@@ -64,7 +79,7 @@ const Footer: React.FC = () => {
       </div>
       {/* Bottom Bar */}
       <p className="w-full border-t border-[#A9D1A1] text-white text-center py-[0.625rem] px-5 sm:px-10 2xl:px-[6.25rem] text-[0.625rem] tracking-[4.64px] font-light">
-        FLAMINGOLIVE.NG ©{currentYear} ALL RIGHTS RESERVED
+        FLAMINGOLIVE ©{currentYear} ALL RIGHTS RESERVED
       </p>
     </footer>
   );
