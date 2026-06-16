@@ -5,8 +5,6 @@ import {
   KshCoin,
   PoundCoin,
   RCoin,
-  SolLogo,
-  PrivyLogo,
   CircleLogo,
 } from "@/assets/imagesv2";
 
@@ -20,7 +18,7 @@ const coins = [
 
 const PayBanner = () => {
   return (
-    <section className="relative bg-[#040C02] w-full px-5 sm:px-10 2xl:px-20 overflow-hidden flex items-center justify-center min-h-[190px]">
+    <div className="relative bg-[#040C02] w-full px-5 sm:px-8 lg:px-12 xl:px-20 overflow-hidden flex items-center justify-center min-h-[190px]">
       {/* Coins — hidden on mobile */}
       <div className="hidden sm:contents">
         {coins.map((coin) => (
@@ -58,12 +56,10 @@ const PayBanner = () => {
         {/* Powered by */}
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <span className="font-inter text-[14px] text-white/60">Powered by</span>
-          <img src={SolLogo} alt="Solana" className="h-6 sm:h-10 object-contain" />
-          <img src={PrivyLogo} alt="Privy" className="h-6 sm:h-10 object-contain" />
           <img src={CircleLogo} alt="Circle" className="h-6 sm:h-10 object-contain" />
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

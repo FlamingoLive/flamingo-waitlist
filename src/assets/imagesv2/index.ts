@@ -23,6 +23,7 @@ import SolLogo from "./SOL-logo.png";
 import Underline from "./underline.png";
 import WatchEngageIcon from "./watch-engage-icon.png";
 import WorldIcon from "./world-icon.png";
+import FlamingoLiveLogo from "./flamingo-live-logo.png";
 
 export {
   BuyerProtectionIcons,
@@ -50,4 +51,5 @@ export {
   Underline,
   WatchEngageIcon,
   WorldIcon,
+  FlamingoLiveLogo,
 };

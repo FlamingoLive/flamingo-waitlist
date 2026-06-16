@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { scrollToSection } from "@/utils/scrollUtils";
 import { JoinWaitlistBg, NoiseRectangle } from "@/assets/images";
 import Button from "@/components/common/Button";
@@ -67,37 +67,38 @@ const JoinWaitlist = () => {
               backgroundPosition: "center",
             }}
           >
-            <h1 className="text-3xl lg:text-[4.01875rem] font-bold text-center lg:text-left text-[#AFB7B4]">
-              <span className="opacity-60">EXPERIENCE </span>
-              <span className="text-[#003720] opacity-100">SHOPPING</span>
+            <h1 className="text-3xl lg:text-[4.01875rem] font-bold text-center leading-[1.12] lg:tracking-[-1.44px] text-[#5F7A23]">
+              <span>EXPERIENCE </span>
+              <span className="text-[#19311E]">SHOPPING</span>
               <span> THAT</span>
               <br className="hidden lg:block" />
               <span> MOVES AS </span>
               <span className="text-[#19311E]">FAST AS YOU DO</span>
             </h1>
             <p className="text-lg lg:text-[1.36875rem] text-center text-[#19311E] leading-[2rem] font-medium font-inter">
-              Live, interactive and instant — Flamingo is redefining how you
-              shop.{" "}
+              Get early access to exclusive live shopping experiences. Secure
+              your spot and stay ahead of{" "}
               <br className="hidden lg:block" />
-              Be the first to dive in — join the waitlist now
+              the trend
             </p>
             <form
               onSubmit={handleSubmit}
-              className="flex border items-center justify-center p-[0.25rem] max-w-[23.14rem] w-full h-[2.6875rem] mx-auto gap-4 rounded-[8px] focus-within:ring focus-within:ring-black transition-all duration-200"
+              className="flex items-center justify-between p-[0.3125rem] pl-5 max-w-[27rem] w-full h-[3.5rem] mx-auto gap-2 rounded-full border border-black/20 focus-within:ring-2 focus-within:ring-[#b8ff01] transition-all duration-200"
             >
               <input
                 type="email"
-                placeholder="Email address"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 w-full h-full pl-2 outline-none text-black font-inter placeholder-[#16351f] placeholder:text-[0.773125rem] text-sm"
+                className="flex-1 w-full h-full bg-transparent outline-none text-black font-inter placeholder-black/40 text-sm"
                 required
               />
               <Button
                 type="submit"
                 variant="lime"
-                size="lg"
-                className="w-[5.31125rem] h-[2.1875rem] px-[0.374375rem] py-[0.701875rem] text-[0.74875rem] font-inter font-medium !rounded-[6px]"
+                size="md"
+                icon={<MdOutlineKeyboardArrowRight size={18} />}
+                className="h-[2.75rem] px-5 text-sm font-inter font-medium !rounded-full whitespace-nowrap"
                 isLoading={isLoading}
                 loadingText="Submitting..."
                 disabled={!isValidEmail(email)}

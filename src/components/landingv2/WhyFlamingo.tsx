@@ -27,19 +27,19 @@ const cards: FeatureCard[] = [
     badge: "<2s Checkout",
     icon: LightningIcon,
     title: "Lightning Fast",
-    description: "Instant payment means no waiting, low fees, no boundaries.",
+    description: "Instant payment, low fees, no boundaries.",
   },
   {
-    badge: "50+ Countries",
+    badge: "Cross-border",
     icon: WorldIcon,
     title: "Global Reach",
-    description: "Connect African sellers with global audiences instantly.",
+    description: "Connect sellers with global audiences instantly.",
   },
   {
-    badge: "Stablecoin to Fiat",
+    badge: "Fiat to Stablecoin",
     icon: OffRampIcon,
-    title: "Off-Ramp",
-    description: "Auto-conversion to 50+ local currencies.",
+    title: "On-Ramp",
+    description: "Convert local currencies to USDC",
   },
 ];
 

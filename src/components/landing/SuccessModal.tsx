@@ -1,14 +1,18 @@
 import {
-  FaCheck,
-  FaFacebook,
+  FaFacebookF,
   FaInstagram,
-  FaRocketchat,
   FaXTwitter,
 } from "react-icons/fa6";
 import { ModalNoiseRectangle, OvalBase } from "@/assets/images";
-import { MdClose, MdOutlineIosShare } from "react-icons/md";
+import {
+  CheckmarkIcon,
+  ShareIcon,
+  MessageIcon,
+} from "@/assets/imagesV3";
+import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import React from "react";
+import toast from "react-hot-toast";
 
 interface SuccessModalProps {
   open: boolean;
@@ -19,12 +23,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
       <div
         style={{
-          background: `linear-gradient(to bottom, rgba(25, 49, 30, 1) 28%, rgba(28, 96, 42, 1) 100%)`,
+          background: `radial-gradient(circle at 20% 20%, #122a10 0%, #040c02 100%)`,
         }}
-        className="flex flex-col gap-[1.075rem] rounded-[38.69px] px-7 xl:px-[2.125rem] py-7 xl:py-13 max-w-[42.1875rem] w-[80%] text-center relative overflow-hidden"
+        className="flex flex-col items-center justify-center gap-6 rounded-[38.69px] border border-primary-2/30 px-6 py-9 md:px-10 md:py-11 w-full max-w-[675px] text-center relative overflow-hidden"
       >
         {/* OvalBase overlay */}
         <motion.img
@@ -33,12 +37,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
           transition={{ duration: 1 }}
           src={OvalBase}
           alt="ovalbase"
-          className="absolute top-0 left-0 xl:top-[-5rem] xl:left-[-6rem] w-[18.125rem] h-[18.125rem] 2xl:w-[22.731875rem] 2xl:h-[22.731875rem] pointer-events-none select-none"
+          className="absolute top-[-4rem] left-[-4rem] w-[20rem] h-[20rem] sm:w-[24rem] sm:h-[24rem] pointer-events-none select-none opacity-40 z-0"
           style={{ zIndex: 0 }}
         />
 
         {/* Noise background Texture */}
-        <div className="absolute inset-0 left-0 w-full h-full z-0">
+        <div className="absolute inset-0 left-0 w-full h-full z-0 opacity-20 pointer-events-none">
           <img
             src={ModalNoiseRectangle}
             alt="modalnoise"
@@ -47,55 +51,58 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
         </div>
 
         {/* Spot Color */}
-        <div className="absolute top-0 left-0 max-w-sm w-full h-20 bg-[#CCFF00]/30 rounded-full blur-[100px] z-0" />
+        <div className="absolute -top-20 -left-20 w-[15rem] h-[15rem] rounded-full bg-[#ccff00]/15 blur-[60px] pointer-events-none z-0" />
 
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-8 right-8 text-primary-2 text-2xl font-bold hover:text-white transition-all duration-300 cursor-pointer z-10"
+          className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors duration-300 text-2xl cursor-pointer z-10"
           aria-label="Close"
         >
           <MdClose />
         </button>
 
-        <div className="flex flex-col gap-[0.5375rem] items-center">
-          <div className="flex flex-col gap-[1.3125rem] items-center">
-            {/* Checkmark */}
-            <div className="bg-primary-2 rounded-full w-[3.4725rem] h-[3.4725rem] flex items-center justify-center">
-              <FaCheck className="text-3xl text-text-dark" />
+        {/* Upper section: Checkmark & Headings */}
+        <div className="flex flex-col gap-4 items-center relative z-10">
+          {/* Checkmark Image */}
+          <img
+            src={CheckmarkIcon}
+            alt="Checkmark"
+            className="w-[3.75rem] h-[3.75rem] object-contain"
+          />
+
+          <div className="flex flex-col gap-1 items-center">
+            {/* Title */}
+            <div className="text-primary-2 font-semibold text-[13px] leading-[16px] tracking-wide font-bricolage">
+              Flamingo LIVE <span className="text-white">Waitlist</span>
             </div>
 
-            <div className="flex flex-col gap-[0.3225rem] items-center">
-              {/* Title */}
-              <div className="text-primary-2 font-semibold text-sm">
-                FLAMINGO <span className="text-white">waitlist.</span>
-              </div>
-
-              <div className="text-white font-bold text-2xl xl:text-[1.935rem]">
-                THANKS FOR JOINING!
-              </div>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div className="text-white text-sm leading-[27.5px]">
-            You're one step closer to streaming, shopping, and selling in real
-            time with the most interactive commerce experience yet.
+            {/* Header */}
+            <h2 className="text-white font-semibold text-[28px] leading-[34px] tracking-normal font-inter">
+              Thanks for joining!
+            </h2>
           </div>
         </div>
 
-        <div className="relative z-10 flex flex-col gap-[1.075rem] justify-center items-center">
+        {/* Middle section: Description */}
+        <div className="text-white text-[14px] leading-[20px] tracking-normal max-w-[513.34px] mx-auto font-inter relative z-10">
+          You're one step closer to streaming, shopping, and selling in real
+          time with the most interactive commerce experience yet.
+        </div>
+
+        {/* Lower section: Info, Socials and CTA */}
+        <div className="relative z-10 flex flex-col gap-5 justify-center items-center w-full">
           {/* Info and Socials */}
-          <div className="flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between gap-2 xl:gap-[1.075rem] max-w-[33.50875rem] w-full mx-auto">
-            <div className="flex items-center justify-start gap-2 text-white">
-              <FaRocketchat className="text-primary-2" />
-              <p className="text-white text-xs">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-4 w-full mx-auto">
+            <div className="flex flex-1 items-center justify-center md:justify-end gap-2 text-white">
+              <img src={MessageIcon} alt="Message" className="w-4 h-4 shrink-0" />
+              <p className="text-white text-[12px] leading-[14px] tracking-normal font-inter whitespace-nowrap">
                 Be the first to know when we go live!
               </p>
             </div>
-            <div className="h-6 w-[0.43px] bg-primary-2 hidden md:block" />
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2">
-              <p className="text-white text-xs">
+            <div className="h-5 w-px bg-white/25 shrink-0 hidden md:block" />
+            <div className="flex flex-1 flex-col sm:flex-row items-center justify-center md:justify-start gap-2.5">
+              <p className="text-white text-[12px] leading-[14px] tracking-normal font-inter whitespace-nowrap">
                 Follow our social media accounts
               </p>
               <span className="flex gap-2">
@@ -104,27 +111,27 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="bg-primary-2 hover:bg-white rounded p-1 w-4 h-4 flex items-center justify-center"
+                  className="bg-primary-2 hover:bg-white rounded-[3px] w-4 h-4 flex items-center justify-center text-text-dark hover:text-black transition-colors duration-300"
                 >
-                  <FaFacebook />
+                  <FaFacebookF size={10} />
                 </a>
                 <a
-                  href="https://www.instagram.com/flamingoliveng"
+                  href="https://www.instagram.com/flamingoliveapp"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="bg-primary-2 hover:bg-white rounded p-1 w-4 h-4 flex items-center justify-center"
+                  className="bg-primary-2 hover:bg-white rounded-[3px] w-4 h-4 flex items-center justify-center text-text-dark hover:text-black transition-colors duration-300"
                 >
-                  <FaInstagram />
+                  <FaInstagram size={10} />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/flamingoliveapp"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X"
-                  className="bg-primary-2 hover:bg-white rounded p-1 w-4 h-4 flex items-center justify-center"
+                  className="bg-primary-2 hover:bg-white rounded-[3px] w-4 h-4 flex items-center justify-center text-text-dark hover:text-black transition-colors duration-300"
                 >
-                  <FaXTwitter />
+                  <FaXTwitter size={10} />
                 </a>
               </span>
             </div>
@@ -132,7 +139,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
 
           {/* Tell a friend button */}
           <button
-            className="max-w-[7.52375rem] w-full h-[1.88125rem] p-2 border border-primary-2 rounded-[5.16px] text-primary-2 font-semibold flex items-center justify-center gap-2 font-inter text-[0.64375rem] cursor-pointer hover:bg-primary-2 hover:text-text-dark transition"
+            className="group px-5 py-2.5 border border-primary-2 rounded-[8px] text-primary-2 font-semibold flex items-center justify-center gap-2 font-inter text-[12px] leading-[14px] tracking-normal cursor-pointer hover:bg-primary-2 hover:text-[#040C02] transition-colors duration-300 w-fit mx-auto"
             onClick={async () => {
               try {
                 if (navigator.share) {
@@ -143,18 +150,21 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ open, onClose }) => {
                   });
                 } else {
                   await navigator.clipboard.writeText(window.location.href);
-                  alert("Link copied! Share it with your friends.");
+                  toast.success("Link copied! Share it with your friends.");
                 }
               } catch (error) {
                 console.error("Error sharing:", error);
-                // Fallback to clipboard if sharing fails
                 await navigator.clipboard.writeText(window.location.href);
-                alert("Link copied! Share it with your friends.");
+                toast.success("Link copied! Share it with your friends.");
               }
             }}
           >
-            Tell a friend
-            <MdOutlineIosShare size={16} />
+            <span>Tell a friend</span>
+            <img
+              src={ShareIcon}
+              alt="Share"
+              className="w-[14px] h-[14px] transition duration-300 group-hover:brightness-0"
+            />
           </button>
         </div>
       </div>
