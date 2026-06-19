@@ -71,11 +71,11 @@ const WhyFlamingo = () => {
         transition={{ duration: 0.5 }}
       >
         <h2 className="font-bricolage font-bold text-[24px] text-[#131313]">
-          Why Flamingo LIVE?
+          Why Flamingo Live?
         </h2>
-        <p className="font-inter text-[16px] text-[#131927] tracking-[0.5px] leading-[1.2]">
+        {/* <p className="font-inter text-[16px] text-[#131927] tracking-[0.5px] leading-[1.2]">
           Empowering African commerce on a global scale
-        </p>
+        </p> */}
       </motion.div>
 
       {/* Cards */}
