@@ -31,7 +31,7 @@ const FooterV2: React.FC = () => {
                 Resources
               </a>
               <a
-                href="mailto:support@flamingolive.ng"
+                href="mailto:support@flamingolive.app"
                 className="text-white hover:underline"
               >
                 support@flamingolive.app

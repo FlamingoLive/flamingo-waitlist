@@ -20,7 +20,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can I have a second seller account?",
     answer:
-      "We are only allowing one seller account per person. If you need to create a second account, please contact us at support@flamingolive.ng",
+      "We are only allowing one seller account per person. If you need to create a second account, please contact us at support@flamingolive.app",
   },
   {
     question: "When can I schedule a live stream?",
