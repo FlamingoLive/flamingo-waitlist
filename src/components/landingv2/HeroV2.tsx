@@ -154,13 +154,9 @@ const HeroV2 = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="font-inter text-3xl sm:text-4xl min-[1400px]:text-[48px] font-bold text-white leading-[1.2] min-[1400px]:leading-[58px]"
               >
-                The live shopping marketplace{" "}
-                <br className="hidden min-[1400px]:block" />
-                that connects sellers to global{" "}
-                <br className="hidden min-[1400px]:block" />
-                audiences{" "}
+                The {" "}
                 <span className="relative inline-block whitespace-nowrap">
-                  in real-time
+                  Cross-Border
                   <motion.img
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -170,6 +166,7 @@ const HeroV2 = () => {
                     className="absolute left-0 bottom-[-0.5rem] w-full pointer-events-none select-none"
                   />
                 </span>
+                {" "}Live Shopping Marketplace
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
