@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 href="mailto:hello@bienv3nue.com"
                 className="text-white hover:underline"
               >
-                support@flamingolive
+                support@flamingolive.app
               </a>
             </div>
             {/* Center Right: Privacy/Terms */}
