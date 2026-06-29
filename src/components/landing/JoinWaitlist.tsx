@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { scrollToSection } from "@/utils/scrollUtils";
 import { JoinWaitlistBg, NoiseRectangle } from "@/assets/images";
@@ -12,14 +12,15 @@ const JoinWaitlist = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [country, setCountry] = useState("");
+  const countryPromise = useRef<Promise<string>>(Promise.resolve(""));
 
   useEffect(() => {
-    fetch("https://ipapi.co/json/")
+    const promise = fetch("https://ipapi.co/json/")
       .then((res) => res.json())
-      .then((data) => {
-        if (data.country_name) setCountry(data.country_name);
-      })
-      .catch(() => {});
+      .then((data) => data.country_name || "")
+      .catch(() => "");
+    countryPromise.current = promise;
+    promise.then((name) => { if (name) setCountry(name); });
   }, []);
 
   const isValidEmail = (email: string) => {
@@ -43,8 +44,9 @@ const JoinWaitlist = () => {
       const formUrl = import.meta.env.VITE_GOOGLE_FORM_URL;
       const formData = new FormData();
       formData.append(import.meta.env.VITE_ENTRY_ID, email);
-      if (country && import.meta.env.VITE_COUNTRY_ENTRY_ID) {
-        formData.append(import.meta.env.VITE_COUNTRY_ENTRY_ID, country);
+      const detectedCountry = country || await countryPromise.current;
+      if (detectedCountry && import.meta.env.VITE_COUNTRY_ENTRY_ID) {
+        formData.append(import.meta.env.VITE_COUNTRY_ENTRY_ID, detectedCountry);
       }
 
       await fetch(formUrl, {
