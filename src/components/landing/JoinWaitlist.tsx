@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { scrollToSection } from "@/utils/scrollUtils";
 import { JoinWaitlistBg, NoiseRectangle } from "@/assets/images";
@@ -11,6 +11,16 @@ const JoinWaitlist = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [country, setCountry] = useState("");
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.country_name) setCountry(data.country_name);
+      })
+      .catch(() => {});
+  }, []);
 
   const isValidEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,10 +40,12 @@ const JoinWaitlist = () => {
     setIsLoading(true);
 
     try {
-      // Use Google Forms URL
       const formUrl = import.meta.env.VITE_GOOGLE_FORM_URL;
       const formData = new FormData();
       formData.append(import.meta.env.VITE_ENTRY_ID, email);
+      if (country && import.meta.env.VITE_COUNTRY_ENTRY_ID) {
+        formData.append(import.meta.env.VITE_COUNTRY_ENTRY_ID, country);
+      }
 
       await fetch(formUrl, {
         method: "POST",
